@@ -1,0 +1,42 @@
+grep -i "unix" geeks.txt
+grep -w "unix" geeks.txt
+grep -c "unix" geeks.txt
+grep -A 2 "unix" geeks.txt
+grep -B 2 "unix" geeks.txt
+grep -C 2 "unix" geeks.txt
+grep -n -i "unix" geeks.txt
+
+grep -o "unix: geeks.txt
+grep -o "Unix.*choose" geeks.txt
+
+
+
+grep -o -b "unix" geeks.txt  # Display position of string
+grep -Eo "1|2" geeks1.txt   OR egrep -o "1|2" geeks1.txt
+  
+grep "^[[:alnum:]]" tecmint.txt  #Search line which start with alphanumberic [A-Z][a-z][0-9]
+grep "^[[:alpha:]]" tecmint.txt  #Search line which start with alphabetes [A-Z][a-z]
+grep "^[[:blank:]]" tecmint.txt  #Search line which start with blanks [Tab & Space]
+grep "^[[:digit:]]" tecmint.txt  #Search line which start with digit [0-9]
+grep "^[[:lower:]]" tecmint.txt  #Search line which start with lower latter
+grep "^[[:punct:]]" tecmint.txt  #Search line which start with punctual  [! ” # $ % & ‘ ( ) * + , – . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~. ]
+grep "^[[:graph:]]" tecmint.txt  #Search line which start with graphical character(Alphanumeric & Punctuation Characters)
+grep "^[[:print:]]" tecmint.txt  #Search line which start with printable character(Alphanumeric, Punctuation and space characters)
+grep "^[[:space:]]" tecmint.txt  #Search line which start with space character(tab, newline, vertical tab, form feed, carriage return, and space)
+grep "^[[:upper:]]" tecmint.txt  #Search line which start with Uppercase 
+grep "^[[:xdigit:]]" tecmint.txt #Search line which start with  hexadecimal value(0-9, A-F and a-f)
+
+
+
+head geeks.txt
+head -n 5 geeks.txt
+head -q -n 2 geeks.txt geeks1.txt
+head -v -n 1 geeks1.txt
+  -> ==> state.txt <==hhh
+     1
+
+nl geeks.txt
+
+
+tail -n 2 geeks.txt
+tail -n 2 geeks.txt geeks1.txt
