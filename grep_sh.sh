@@ -12,6 +12,7 @@ function start(){
 	NC='\033[0m'
 	echo $1
         echo -e "${GREEN}"
+	echo $1
 	seperator
 	$1
 	seperator
@@ -28,6 +29,7 @@ do
       echo "5) Search multiple String"
       echo "6) Print first N Number's line" 
       echo "7) print last N Number's line"
+      echo "8) print line beetween 2 string"
       echo "*) Exit" 
       read -p "Choose: " ch
       
@@ -68,6 +70,10 @@ do
 	    ;;
          7) read -p "Enter N value: " val
 	    start "tail -n $val $fname" 
+            ;;
+	 8) read -p "Enter first string: " str1
+	    read -p "Enter last string: " str2
+	    start "grep -o '$str1.*$str2' $fname"
             ;;
          *) break ;;
       esac 
