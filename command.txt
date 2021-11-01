@@ -6,7 +6,7 @@ grep -B 2 "unix" geeks.txt
 grep -C 2 "unix" geeks.txt
 grep -n -i "unix" geeks.txt
 
-grep -o "unix: geeks.txt
+grep -o "unix" geeks.txt
 grep -o "Unix.*choose" geeks.txt
 
 
