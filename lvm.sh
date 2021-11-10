@@ -15,12 +15,15 @@ do
 	      ;;
 	   3) sudo lvdisplay
               ;;
-           4) a=$(lsblk --noheading -r -o NAME,TYPE,MOUNTPOINT | awk '$1~/[[:alnum:]]/ && $2 == "disk" && $3 == ""' | sed 's/disk//') 
-              b=$(sudo pvdisplay | grep -o "/dev.*" | sed 's/dev//' | tr -d /)
+           4) # variable "a" store disk name which are not mounted
+	      a=$(lsblk --noheading -r -o NAME,TYPE,MOUNTPOINT | awk '$1~/[[:alnum:]]/ && $2 == "disk" && $3 == ""' | sed 's/disk//') 
+              # variable "b" store already created physical volume name
+	      b=$(sudo pvdisplay | grep -o "/dev.*" | sed 's/dev//' | tr -d /)
 	      echo $a
 	      echo $b
 	      c=" "
 	  
+	      # remove already available physical volume disk name from variable "a"
 	      for i in $a
               do
 		  counter=0
@@ -38,7 +41,6 @@ do
 	      done
 	          while true
 	          do
-	            
 	            read -p "select your drive " drive
 	            drive="/dev/$drive"
 	            echo $drive	  
