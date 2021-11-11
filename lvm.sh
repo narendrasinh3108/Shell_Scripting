@@ -16,12 +16,15 @@ do
 	      ;;
 	   3) sudo lvdisplay
               ;;
-           4) a=$(lsblk --noheading -r -o NAME,TYPE,MOUNTPOINT | awk '$1~/[[:alnum:]]/ && $2 == "disk" && $3 == ""' | sed 's/disk//') 
-              b=$(sudo pvdisplay | grep -o "/dev.*" | sed 's/dev//' | tr -d /)
+           4) # "a" store all available disk"
+	      a=$(lsblk --noheading -r -o NAME,TYPE,MOUNTPOINT | awk '$1~/[[:alnum:]]/ && $2 == "disk" && $3 == ""' | sed 's/disk//') 
+              # "b" store currenty availble PV
+	      b=$(sudo pvdisplay | grep -o "/dev.*" | sed 's/dev//' | tr -d /)
 	      echo $a
 	      echo $b
 	      c=" "
-	  
+	      
+	      #remove available pv HDD from 
 	      for i in $a
               do
 		  counter=0
